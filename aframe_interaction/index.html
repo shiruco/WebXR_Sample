@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame | demo</title>
+    <script src="./js/libs/aframe.min.js"></script>
+  </head>
+  <body>   
+    <a-scene>
+      <a-assets>
+        <img id="tile" src="./images/marbleTile.jpg">
+        <img id="menu" src="./images/menu.jpg">
+      </a-assets>
+      <!-- Controls -->
+      <a-entity id="camera" position="0 2 0">
+        <a-entity camera look-controls>
+          <a-entity cursor="fuse: true; timeout: 3000;" position="0 0 -2"
+                    geometry="primitive: ring; radiusOuter: 0.05; radiusInner: 0; segmentsTheta: 45"
+                    material="color: #A6AAF4">
+          </a-entity>
+        </a-entity>
+      </a-entity>
+      <!-- sky -->
+      <a-sky color="#fff" material="color:#fff;shader:flat" geometry="primitive:sphere;radius:5000;segmentsWidth:64;segmentsHeight:64" scale="-1 1 1"></a-sky>
+      
+      <!-- ground -->
+      <a-entity material="src:#tile; repeat:25 50.4; metalness:0.1;" position="0 0 0" rotation="-90 0 0" geometry="primitive:plane;width:20;height:20"></a-entity>
+
+      <!-- monet -->
+      <a-entity>
+        <a-plane id="monet" class="picture" color="#FFF" src="./images/monet.jpg" position="0 2.2 -3" height="1.8465" width="1.5">
+          <a-plane id="monetPanel" visible="false" color="#FFF" src="./images/monet_panel.jpg" position="-1.85 0.5 0.1" rotation="0 10 0" height="0.62" width="2"></a-plane>
+        </a-plane>
+
+        <a-entity id="monetMenu" visible="false" position="0 2.2 -3">
+          <a-plane class="menu1" color="#FFF" src="./images/menu1.jpg" position="1.6 0.65 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="300"></a-animation>
+          </a-plane>
+          <a-plane class="menu2" color="#FFF" src="./images/menu2.jpg" position="1.6 0.3 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="400"></a-animation>
+          </a-plane>
+          <a-plane class="menu3" color="#FFF" src="./images/menu3.jpg" position="1.6 -0.05 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="500"></a-animation>
+          </a-plane>
+          <a-plane class="close" color="#FFF" src="./images/close.jpg" position="1.6 -0.4 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="600"></a-animation>
+          </a-plane>
+        </a-entity>
+      </a-entity>
+
+      <!-- renoir -->
+      <a-entity>
+        <a-plane id="renoir" class="picture" color="#FFF" src="./images/renoir.jpg" rotation="0 90 0" position="-3 2.2 0" height="1.8465" width="1.5">
+          <a-plane id="renoirPanel" visible="false" color="#FFF" src="./images/renoir_panel.jpg" position="-1.85 0.5 0.1" rotation="0 10 0" height="0.62" width="2"></a-plane>
+        </a-plane>
+      </a-entity>
+      <a-entity id="renoirMenu" visible="false" rotation="0 90 0" position="-3 2.2 0">
+          <a-plane class="menu1" color="#FFF" src="./images/menu1.jpg" position="1.6 0.65 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="300"></a-animation>
+          </a-plane>
+          <a-plane class="menu2" color="#FFF" src="./images/menu2.jpg" position="1.6 0.3 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="400"></a-animation>
+          </a-plane>
+          <a-plane class="menu3" color="#FFF" src="./images/menu3.jpg" position="1.6 -0.05 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="500"></a-animation>
+          </a-plane>
+          <a-plane class="close" color="#FFF" src="./images/close.jpg" position="1.6 -0.4 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="600"></a-animation>
+          </a-plane>
+        </a-entity>
+      </a-entity>
+
+      <!-- gogh -->
+      <a-entity>
+        <a-plane id="gogh" class="picture" color="#FFF" src="./images/gogh.jpg" rotation="0 -90 0" position="3 2.2 0" height="1.6" width="2">
+          <a-plane id="goghPanel" visible="false" color="#FFF" src="./images/gogh_panel.jpg" position="-2.1 0.5 0.1" rotation="0 10 0" height="0.62" width="2"></a-plane>
+        </a-plane>
+      </a-entity>
+      <a-entity id="goghMenu" visible="false" rotation="0 -90 0" position="2.4 2 0">
+          <a-plane class="menu1" color="#FFF" src="./images/menu1.jpg" position="1.6 0.65 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="300"></a-animation>
+          </a-plane>
+          <a-plane class="menu2" color="#FFF" src="./images/menu2.jpg" position="1.6 0.3 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="400"></a-animation>
+          </a-plane>
+          <a-plane class="menu3" color="#FFF" src="./images/menu3.jpg" position="1.6 -0.05 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="500"></a-animation>
+          </a-plane>
+          <a-plane class="close" color="#FFF" src="./images/close.jpg" position="1.6 -0.4 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="600"></a-animation>
+          </a-plane>
+        </a-entity>
+      </a-entity>
+
+      <!-- degas -->
+      <a-entity>
+        <a-plane id="degas" class="picture" color="#FFF" src="./images/degas.jpg" rotation="0 180 0" position="0 2.2 3" height="1.8465" width="1.5">
+          <a-plane id="degasPanel" visible="false" color="#FFF" src="./images/degas_panel.jpg" position="-1.85 0.5 0.1" rotation="0 10 0" height="0.62" width="2"></a-plane>
+        </a-plane>
+      </a-entity>
+      <a-entity id="degasMenu" visible="false" rotation="0 180 0" position="0 2.2 3">
+          <a-plane class="menu1" color="#FFF" src="./images/menu1.jpg" position="1.6 0.65 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="300"></a-animation>
+          </a-plane>
+          <a-plane class="menu2" color="#FFF" src="./images/menu2.jpg" position="1.6 0.3 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="400"></a-animation>
+          </a-plane>
+          <a-plane class="menu3" color="#FFF" src="./images/menu3.jpg" position="1.6 -0.05 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="500"></a-animation>
+          </a-plane>
+          <a-plane class="close" color="#FFF" src="./images/close.jpg" position="1.6 -0.4 0.1" rotation="0 -10 0" height="0.3" width="1.5">
+            <a-animation begin="show" attribute="rotation" from="0 0 0" to="0 -10 0" dur="600"></a-animation>
+          </a-plane>
+        </a-entity>
+      </a-entity>
+
+      <!-- walls -->
+      <a-plane color="#CCC" src="./images/wall.jpg" position="0 0 4" height="13" width="8"></a-plane>     
+      <a-plane color="#CCC" src="./images/wall.jpg" rotation="0 90 0" position="4 0 0" height="13" width="8"></a-plane>
+      <a-plane color="#CCC" src="./images/wall.jpg" position="0 0 -4" height="13" width="8"></a-plane>
+      <a-plane color="#CCC" src="./images/wall.jpg" rotation="0 90 0" position="-4 0 0" height="13" width="8"></a-plane>
+
+    </a-scene>
+    <script src="./js/contents.js"></script>
+  </body>
+</html>

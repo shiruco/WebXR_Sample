@@ -1,2 +1,2 @@
-# WebVR_Sample
-WebVR_Sample
+# webVR_demo
+webVR_demo

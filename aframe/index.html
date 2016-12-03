@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame | demo</title>
+    <script src="./js/libs/aframe.min.js"></script>
+  </head>
+  <body>   
+    <a-scene>
+      <a-assets>
+        <img id="tile" src="./images/marbleTile.jpg">
+        <img id="menu" src="./images/menu.jpg">
+      </a-assets>
+
+      <!-- Controls -->
+      <a-entity id="camera" position="0 2 0">
+        <a-entity camera look-controls>
+        </a-entity>
+      </a-entity>
+      
+      <!-- sky -->
+      <a-sky color="#fff" material="color:#fff;shader:flat" geometry="primitive:sphere;radius:5000;segmentsWidth:64;segmentsHeight:64" scale="-1 1 1"></a-sky>
+      
+      <!-- ground -->
+      <a-entity material="src:#tile; repeat:25 50.4; metalness:0.1;" position="0 0 0" rotation="-90 0 0" geometry="primitive:plane;width:20;height:20"></a-entity>
+
+      <!-- monet -->
+      <a-entity>
+        <a-plane id="monet" class="picture" color="#FFF" src="./images/monet.jpg" position="0 2.2 -3" height="1.8465" width="1.5">
+        </a-plane>
+
+      <!-- renoir -->
+      <a-entity>
+        <a-plane id="renoir" class="picture" color="#FFF" src="./images/renoir.jpg" rotation="0 90 0" position="-3 2.2 0" height="1.8465" width="1.5">
+        </a-plane>
+      </a-entity>
+
+      <!-- gogh -->
+      <a-entity>
+        <a-plane id="gogh" class="picture" color="#FFF" src="./images/gogh.jpg" rotation="0 -90 0" position="3 2.2 0" height="1.6" width="2">
+        </a-plane>
+      </a-entity>
+
+      <!-- degas -->
+      <a-entity>
+        <a-plane id="degas" class="picture" color="#FFF" src="./images/degas.jpg" rotation="0 180 0" position="0 2.2 3" height="1.8465" width="1.5">
+        </a-plane>
+      </a-entity>
+
+      <!-- walls -->
+      <a-plane color="#CCC" src="./images/wall.jpg" position="0 0 4" height="13" width="8"></a-plane>     
+      <a-plane color="#CCC" src="./images/wall.jpg" rotation="0 90 0" position="4 0 0" height="13" width="8"></a-plane>
+      <a-plane color="#CCC" src="./images/wall.jpg" position="0 0 -4" height="13" width="8"></a-plane>
+      <a-plane color="#CCC" src="./images/wall.jpg" rotation="0 90 0" position="-4 0 0" height="13" width="8"></a-plane>
+
+    </a-scene>
+  </body>
+</html>
