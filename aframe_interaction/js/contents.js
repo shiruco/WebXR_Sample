@@ -11,39 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var menu3 = menu.querySelector(".menu3");
     var close = menu.querySelector(".close");
 
-    menu1.addEventListener('mouseenter',function(){
-      menu1.setAttribute('color','#CCC');
-      menu2.setAttribute('color','#FFF');
-      menu3.setAttribute('color','#FFF');
-    });
-    menu1.addEventListener('mouseleave',function(){
-      menu1.setAttribute('color','#FFF');
-    });
-    menu2.addEventListener('mouseenter',function(){
-      menu1.setAttribute('color','#FFF');
-      menu2.setAttribute('color','#CCC');
-      menu3.setAttribute('color','#FFF');
-    });
-    menu2.addEventListener('mouseleave',function(){
-      menu2.setAttribute('color','#FFF');
-    });
-    menu3.addEventListener('mouseenter',function(){
-      menu1.setAttribute('color','#FFF');
-      menu2.setAttribute('color','#FFF');
-      menu3.setAttribute('color','#CCC');
-    });
-    menu3.addEventListener('mouseleave',function(){
-      menu3.setAttribute('color','#FFF');
-    });
-    close.addEventListener('mouseenter',function(){
-      menu1.setAttribute('color','#FFF');
-      menu2.setAttribute('color','#FFF');
-      menu3.setAttribute('color','#FFF');
-    });
-    close.addEventListener('click',function(){
-      this.parentNode.setAttribute('visible','false');
-    });
-
     picture.addEventListener('mouseenter',function(){
       var artist = this.id;
       if (artist) {
@@ -51,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         panel.setAttribute('visible','true');
       }
     });
+
     picture.addEventListener('mouseleave',function(){
       var artist = this.id;
       if (artist) {
@@ -58,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         panel.setAttribute('visible','false');
       }
     });
+
     picture.addEventListener('click',function(){
       var artist = this.id;
       var menu = document.querySelector('#' + artist + 'Menu');
@@ -67,6 +36,46 @@ document.addEventListener('DOMContentLoaded', function() {
       menu.querySelector('.menu3').emit('show');
       menu.querySelector('.close').emit('show');
       menu.setAttribute('visible','true');
+    });
+
+    menu1.addEventListener('mouseenter',function(){
+      menu1.setAttribute('color','#CCC');
+      menu2.setAttribute('color','#FFF');
+      menu3.setAttribute('color','#FFF');
+    });
+
+    menu1.addEventListener('mouseleave',function(){
+      menu1.setAttribute('color','#FFF');
+    });
+
+    menu2.addEventListener('mouseenter',function(){
+      menu1.setAttribute('color','#FFF');
+      menu2.setAttribute('color','#CCC');
+      menu3.setAttribute('color','#FFF');
+    });
+
+    menu2.addEventListener('mouseleave',function(){
+      menu2.setAttribute('color','#FFF');
+    });
+
+    menu3.addEventListener('mouseenter',function(){
+      menu1.setAttribute('color','#FFF');
+      menu2.setAttribute('color','#FFF');
+      menu3.setAttribute('color','#CCC');
+    });
+
+    menu3.addEventListener('mouseleave',function(){
+      menu3.setAttribute('color','#FFF');
+    });
+
+    close.addEventListener('mouseenter',function(){
+      menu1.setAttribute('color','#FFF');
+      menu2.setAttribute('color','#FFF');
+      menu3.setAttribute('color','#FFF');
+    });
+    
+    close.addEventListener('click',function(){
+      this.parentNode.setAttribute('visible','false');
     });
   }
 
