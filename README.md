@@ -1,6 +1,6 @@
 # webVR Sample
 
-「WebVRを触ってみる」
+「WebVRを触ってみる」  
 https://qiita.com/shiruco/items/6d5ca9c9bbd715676a48
 
 #### WebVR Boilerplate
